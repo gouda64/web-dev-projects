@@ -1,4 +1,4 @@
 # odin-recipes
-This is the recipes project from The Odin Project curriculum. It's also for me to learn more about coding conventions and good practices for setting up a git repository.
+This is the recipes project from The Odin Project curriculum. It's pretty basic, nothing new to learn but it's been good practice for me in terms of getting used to my workspace and practicing good git habits.
 
 The website is pretty simple - a homepage and three linked recipe pages involving images and lists. You can view it locally or see the published version [here](https://gouda64.github.io/odin-recipes/). 

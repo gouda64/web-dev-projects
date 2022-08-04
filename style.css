@@ -1,0 +1,47 @@
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    background-color: yellow;
+}
+
+h1 {
+    background-color: red;
+    color: lightgreen;
+    text-align: center;
+}
+
+h2 {
+    background-color: blue;
+    color: red;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+}
+
+p {
+    background-color: lightgreen;
+    color: blue;
+    text-align: center;
+}
+
+li {
+    background-color: red;
+    color: lightgreen;
+    font-weight: 400;
+}
+
+a {
+    background-color: blue;
+    color: red;
+}
+
+footer p {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 20px;
+}

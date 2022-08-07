@@ -13,16 +13,16 @@ body {
     padding: 16px 125px;
 }
 
-.logo {
-   font-size: 24px;
-   font-weight: bold;
-   color: #F9FAF8;
+.header img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
 }
 
 .header ul {
     list-style-type: none;
     display: flex;
-    gap: 16px;
+    gap: 50px;
 }
 
 .header li a {
@@ -83,6 +83,7 @@ body {
     max-width: 600px;
     min-width: 200px;
     flex: auto;
+    border-radius: 8px;
 }
 
 .information {
@@ -113,6 +114,11 @@ body {
     margin-bottom: 10px;
 }
 
+.item img {
+    width: 200px;
+    height: auto;
+}
+
 .item .text {
     width: 200px;
 }
@@ -135,7 +141,7 @@ body {
 
 .quote .quote-source {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     align-self: flex-end;
     margin-top: 13px;
 }

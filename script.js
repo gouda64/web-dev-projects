@@ -25,3 +25,33 @@ function playRound(playerSelection, computerSelection) {
         return -1;
     }
 }
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let input = prompt("Please enter either rock, paper, or scissors").toLowerCase();
+        while (input !== "rock" && input !== "paper" && input !== "scissors") {
+            console.log("You entered an invalid input, please try again");
+            input = prompt("Please enter either rock, paper, or scissors").toLowerCase();
+        }
+        const comp = getComputerChoice();
+        let result = playRound(input, comp);
+        if (result > 0) {
+            playerScore++;
+            console.log(`Since ${input} beats ${comp}, you won this round!`);
+        }
+        else if (result < 0) {
+            computerScore++;
+            console.log(`Since ${comp} beats ${input}, you lost this round :(`);
+        }
+        else {
+            console.log(`You both picked ${input}, so it's a tie!`);
+            i--;
+        }
+        console.log(`You now have ${playerScore} and the computer has ${computerScore}`);
+    }
+    const msg = playerScore > computerScore ? `You won ${playerScore} to ${computerScore}` : `You lost ${playerScore} to ${computerScore}`;
+    console.log(msg);
+}

@@ -1,0 +1,65 @@
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+    font-family: 'Lucida Console', 'Courier New', monospace; 
+
+    background-color: black;
+    color: white;
+    font-size: 30px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 45px;
+}
+
+.summ-text {
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+button {
+    border-style: solid;
+    border-color: white;
+    color: white;
+    background-color: black;
+    font: inherit;
+    font-weight: bold;
+
+    width: 200px;
+    height: 200px;
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgb(255, 244, 41);
+}

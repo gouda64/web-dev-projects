@@ -1,3 +1,19 @@
+let playerScore = 0;
+let computerScore = 0;
+
+let summText = document.querySelector(".summ-text");
+
+let buttons = document.querySelector(".options").childNodes;
+buttons.forEach(button => button.addEventListener("click", function() {
+    playRound(this.className, getComputerChoice());
+}));
+
+let humanScoreText = document.querySelector(".score .human");
+let robotScoreText = document.querySelector(".score .robot");
+
+let restartButton = document.querySelector(".restart");
+restartButton.addEventListener("click", restart);
+
 function getComputerChoice() {
     const rand = Math.floor(Math.random()*3);
     if (rand === 0) {
@@ -12,46 +28,39 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+    if (playerScore === 5 || computerScore === 5) return;
+
     if (playerSelection === computerSelection) {
-        return 0;
+        summText.textContent = `You both picked ${playerSelection}, so it's a tie! Try again!`;
     }
     else if (playerSelection === "rock" && computerSelection === "scissors"
             || playerSelection === "scissors" && computerSelection === "paper"
             || playerSelection === "paper" && computerSelection === "rock") {
-        return 1;  
-    }
+        summText.textContent = `Since ${computerSelection} beats ${playerSelection}, you lost this round 😢`;
+        computerScore++;
+        robotScoreText.textContent = computerScore;  
+    } 
     else {
-        return -1;
+        summText.textContent = `Since ${playerSelection} beats ${computerSelection}, you won this round!`;
+        playerScore++;
+        humanScoreText.textContent = playerScore;
+    }
+
+    if (playerScore === 5) {
+        summText.textContent = "Yay, you won! Click restart to play again";
+        restartButton.classList.toggle("hidden");
+    }
+    else if (computerScore === 5) {
+        summText.textContent = "Oh no, you lost! Click restart to play again";
+        restartButton.classList.toggle("hidden");
     }
 }
 
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let i = 0; i < 5; i++) {
-        let input = prompt("Please enter either rock, paper, or scissors").toLowerCase();
-        while (input !== "rock" && input !== "paper" && input !== "scissors") {
-            console.log("You entered an invalid input, please try again");
-            input = prompt("Please enter either rock, paper, or scissors").toLowerCase();
-        }
-        const comp = getComputerChoice();
-        let result = playRound(input, comp);
-        if (result > 0) {
-            playerScore++;
-            console.log(`Since ${input} beats ${comp}, you won this round!`);
-        }
-        else if (result < 0) {
-            computerScore++;
-            console.log(`Since ${comp} beats ${input}, you lost this round :(`);
-        }
-        else {
-            console.log(`You both picked ${input}, so it's a tie!`);
-            i--;
-        }
-        console.log(`You now have ${playerScore} and the computer has ${computerScore}`);
-    }
-    const msg = playerScore > computerScore ? `You won ${playerScore} to ${computerScore}` : `You lost ${playerScore} to ${computerScore}`;
-    console.log(msg);
+function restart() {
+    playerScore = 0;
+    computerScore = 0;
+    humanScoreText.textContent = "0";
+    robotScoreText.textContent = "0";
+    summText.textContent = "Select rock, paper, or scissors to start the game. First to 5 wins!";
+    restartButton.classList.toggle("hidden");
 }

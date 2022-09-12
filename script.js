@@ -36,12 +36,12 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === "rock" && computerSelection === "scissors"
             || playerSelection === "scissors" && computerSelection === "paper"
             || playerSelection === "paper" && computerSelection === "rock") {
-        summText.textContent = `Since ${computerSelection} beats ${playerSelection}, you lost this round 😢`;
+        summText.textContent = `Since ${playerSelection} beats ${computerSelection}, you lost this round 😢`;
         computerScore++;
         robotScoreText.textContent = computerScore;  
     } 
     else {
-        summText.textContent = `Since ${playerSelection} beats ${computerSelection}, you won this round!`;
+        summText.textContent = `Since ${computerSelection} beats ${playerSelection}, you won this round!`;
         playerScore++;
         humanScoreText.textContent = playerScore;
     }

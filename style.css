@@ -32,6 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
     font-size: 20px;
     text-align: center;
 }
@@ -49,6 +50,28 @@ body {
     height: 23px;
     border-radius: 23px;
     background-color: #545863;
+}
+
+.switch {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #545863;
+    height: 25px;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+}
+.switch-thumb {
+    background-color: #545863;
+    height: 16px;
+    width: 16px;
+    border-radius: 16px;
+    margin: 0 8px;
+    transition: inherit;
 }
 
 .display {

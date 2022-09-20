@@ -22,6 +22,7 @@ body {
 .content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
 }
 
@@ -74,6 +75,19 @@ body {
     transition: inherit;
 }
 
+.color {
+    border-style: solid;
+    border-radius: 10px;
+    height: 30px;
+    width: 50px;
+    background-color: #84827d;
+}
+.color [type="color"] {
+    opacity: 0;
+    height: 30px;
+    width: 50px;
+}
+
 .display {
     border-style: solid;
     border-width: 1px;
@@ -92,4 +106,5 @@ body {
 .display-child {
     border-style: solid;
     border-width: 1px;
+    background-color: white;
 }

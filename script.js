@@ -1,5 +1,6 @@
 let gridSize = 16;
 let mode = 0; //0 is normal, 1 is click
+let color = "#84827d";
 
 let display = document.querySelector(".display");
 
@@ -7,11 +8,11 @@ function addListeners() {
     display.childNodes.forEach((pixel) => {
         pixel.onmouseover = (event) => {
             if (mode === 0 || event.buttons) {
-                event.target.style.backgroundColor = "#84827d";
+                event.target.style.backgroundColor = color;
             }
         };
         pixel.onmousedown = (event) => {
-            event.target.style.backgroundColor = "#84827d";
+            event.target.style.backgroundColor = color;
         };
     });
 }
@@ -56,4 +57,11 @@ modeSwitch.onclick = (event) => {
         switchThumb.style.transform = null;
         mode = 0;
     }
+};
+
+let colorInput = document.querySelector(".color [type='color']");
+let colorBox = document.querySelector(".color");
+colorInput.oninput = (event) => {
+    color = event.target.value;
+    colorBox.style.backgroundColor = color;
 };

@@ -6,6 +6,11 @@ let display = document.querySelector(".display");
 function addListeners() {
     display.childNodes.forEach((pixel) => {
         pixel.onmouseover = (event) => {
+            if (mode === 0 || event.buttons) {
+                event.target.style.backgroundColor = "#84827d";
+            }
+        };
+        pixel.onmousedown = (event) => {
             event.target.style.backgroundColor = "#84827d";
         };
     });
@@ -37,7 +42,7 @@ slider.oninput = (event) => {
 let modeSwitch = document.querySelector(".switch");
 let switchThumb = document.querySelector(".switch .switch-thumb");
 
-modeSwitch.onclick = (event) => { 
+modeSwitch.onclick = (event) => {
     //using event.target causes some issues with child
     if (mode === 0) {
         modeSwitch.style.backgroundColor = "#545863";

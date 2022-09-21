@@ -2,7 +2,7 @@ let gridSize = 16;
 let drawMode = 0; //0 is normal, 1 is click
 let outMode = 0; //0 is normal, 1 is rainbow, 2 is erase
 let color = "#84827d";
-let gridLines = false;
+let gridLines = true;
 
 let display = document.querySelector(".display");
 
@@ -106,12 +106,12 @@ gridSwitch.onclick = (event) => {
         });
     }
     else {
-        gridSwitch.style.backgroundColor = null;
+        gridSwitch.style.backgroundColor = "#f3e6d9";
         gridSwitchThumb.style.backgroundColor = "#545863";
-        gridSwitchThumb.style.transform = null;
+        gridSwitchThumb.style.transform = "none";
         gridLines = false;
         display.childNodes.forEach((pixel) => {
-            pixel.style.borderStyle = null;
+            pixel.style.borderStyle = "none";
         });
     }
 };

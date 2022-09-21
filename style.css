@@ -76,6 +76,14 @@ body {
     transition: inherit;
 }
 
+.grid-toggle .switch {
+    background-color: #545863;
+}
+.grid-toggle .switch-thumb {
+    background-color: #f3e6d9;
+    transform: translateX(28px);
+}
+
 .color {
     border-style: solid;
     border-radius: 10px;
@@ -125,5 +133,6 @@ body {
 }
 .display div {
     background-color: white;
+    border-style: solid;
     border-width: 1px;
 }

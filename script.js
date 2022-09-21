@@ -1,7 +1,8 @@
 let gridSize = 16;
 let drawMode = 0; //0 is normal, 1 is click
-let inMode = 0; //0 is normal, 1 is rainbow, 2 is transparent, 3 is erase
+let outMode = 0; //0 is normal, 1 is rainbow, 2 is erase
 let color = "#84827d";
+let gridLines = false;
 
 let display = document.querySelector(".display");
 
@@ -9,13 +10,26 @@ function addListeners() {
     display.childNodes.forEach((pixel) => {
         pixel.onmouseover = (event) => {
             if (drawMode === 0 || event.buttons) {
-                event.target.style.backgroundColor = color;
+                draw(event);
             }
         };
-        pixel.onmousedown = (event) => {
-            event.target.style.backgroundColor = color;
-        };
+        pixel.onmousedown = draw;
     });
+}
+
+function draw(event) {
+    switch (+outMode) {
+        case 0:
+            event.target.style.backgroundColor = color;
+            break;
+        case 1:
+            event.target.style.backgroundColor = `rgb(${Math.random()*255 + 1}, 
+                ${Math.random()*255 + 1}, ${Math.random()*255 + 1})`;
+            break;
+        case 2:
+            event.target.style.backgroundColor = "white";
+            break;
+    }
 }
 
 function setGrid(gridSize) {
@@ -26,7 +40,6 @@ function setGrid(gridSize) {
 
     for (let i = 0; i < gridSize*gridSize; i++) {
         const div = document.createElement("div");
-        div.classList.add("display-child");
         display.appendChild(div);
     }
 
@@ -41,21 +54,21 @@ slider.oninput = (event) => {
     setGrid(gridSize);
 };
 
-let modeSwitch = document.querySelector(".switch");
-let switchThumb = document.querySelector(".switch .switch-thumb");
+let modeSwitch = document.querySelector(".draw-toggle .switch");
+let modeSwitchThumb = document.querySelector(".draw-toggle .switch .switch-thumb");
 
 modeSwitch.onclick = (event) => {
     //using event.target causes some issues with child
     if (drawMode === 0) {
         modeSwitch.style.backgroundColor = "#545863";
-        switchThumb.style.backgroundColor = "#f3e6d9";
-        switchThumb.style.transform = "translateX(28px)";
+        modeSwitchThumb.style.backgroundColor = "#f3e6d9";
+        modeSwitchThumb.style.transform = "translateX(28px)";
         drawMode = 1;
     }
     else {
         modeSwitch.style.backgroundColor = null;
-        switchThumb.style.backgroundColor = "#545863";
-        switchThumb.style.transform = null;
+        modeSwitchThumb.style.backgroundColor = "#545863";
+        modeSwitchThumb.style.transform = null;
         drawMode = 0;
     }
 };
@@ -69,12 +82,36 @@ colorInput.oninput = (event) => {
 
 document.querySelectorAll(".sidebar-option.mode").forEach((mode) => {
     mode.onclick = (event) => {
-        let old = document.querySelector(".sidebar-option.mode[data-mode='" + inMode + "']");
+        let old = document.querySelector(".sidebar-option.mode[data-mode='" + outMode + "']");
         old.style.backgroundColor = "#f3e6d9";
         old.style.color = "#545863";
 
-        inMode = event.target.dataset.mode;
+        outMode = event.target.dataset.mode;
         event.target.style.backgroundColor = "#545863";
         event.target.style.color = "#f3e6d9";
     };
 });
+
+let gridSwitch = document.querySelector(".grid-toggle .switch");
+let gridSwitchThumb = document.querySelector(".grid-toggle .switch .switch-thumb");
+
+gridSwitch.onclick = (event) => {
+    if (gridLines === false) {
+        gridSwitch.style.backgroundColor = "#545863";
+        gridSwitchThumb.style.backgroundColor = "#f3e6d9";
+        gridSwitchThumb.style.transform = "translateX(28px)";
+        gridLines = true;
+        display.childNodes.forEach((pixel) => {
+            pixel.style.borderStyle = "solid";
+        });
+    }
+    else {
+        gridSwitch.style.backgroundColor = null;
+        gridSwitchThumb.style.backgroundColor = "#545863";
+        gridSwitchThumb.style.transform = null;
+        gridLines = false;
+        display.childNodes.forEach((pixel) => {
+            pixel.style.borderStyle = null;
+        });
+    }
+};

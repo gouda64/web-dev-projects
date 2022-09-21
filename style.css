@@ -121,6 +121,8 @@ body {
     border-width: 2px;
     display: grid;
     flex: 1 1 auto;
+
+    margin-bottom: 30px;
     
     width: 30vw;
     height: 30vw;

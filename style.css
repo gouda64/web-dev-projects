@@ -10,46 +10,46 @@ body {
 }
 
 .calculator {
-    height: 700px;
-    width: 500px;
-    padding: 45px;
+    height: 42em;
+    width: 30em;
+    padding: 3.5em;
     display: flex;
     flex-direction: column;
     background-color: #1a6dc1;
-    border-radius: 30px;
-    gap: 30px;
+    border-radius: 2em;
+    gap: 2em;
 }
 
 .top {
     display: flex;
     flex-grow: 0;
-    gap: 15px;
+    gap: 1em;
 }
 .top .display {
     background-color: #00529e;
-    height: 125px;
+    height: 2em;
     width: 73%;
-    border-radius: 30px 0 0 30px;
+    border-radius: 0.5em 0 0 0.5em;
     display: flex;
     flex-grow: 0;
     align-items: center;
     justify-content: end;
-    font-size: 60px;
+    font-size: 3.75em;
     overflow: hidden;
 }
 .top .display span {
-    margin: 20px;
+    margin: 0.33em;
 }
 .top [data-symbol="delete"] {
     width: 25%;
-    font-size: 30px;
+    font-size: 1.875em;
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
     transition: .2s;
     background-color: #2c7ed1;
-    border-radius: 0 30px 30px 0;
+    border-radius: 0 1em 1em 0;
     color: white;
 }
 .top [data-symbol="delete"]:hover {
@@ -57,27 +57,27 @@ body {
 }
 
 .buttons {
-    height: 525px;
+    height: 32.8em;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 15px;
+    gap: 1em;
 }
 .buttons .row {
     flex: 1;
     display: flex;
-    gap: 15px;
+    gap: 1em;
 } 
 .buttons .row div {
-    width: 75px;
-    font-size: 35px;
+    width: 2.14em;
+    font-size: 2.19em;
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
     transition: .2s;
     background-color: #2c7ed1;
-    border-radius: 75px;
+    border-radius: 2.14em;
 }
 .buttons .row div:hover {
     filter: brightness(120%);

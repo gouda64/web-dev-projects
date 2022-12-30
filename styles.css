@@ -1,0 +1,16 @@
+@font-face {
+    font-family: cats;
+    src: url(./OrientalCatsLight.otf);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

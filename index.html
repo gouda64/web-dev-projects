@@ -16,32 +16,44 @@
         <p>Photo by <a href="https://unsplash.com/@bogdanf?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogdan Farca</a> on <a href="https://unsplash.com/images/animals/cat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </div>
     <div class="content-section">
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas nemo qui ea soluta consequatur a sapiente laborum aliquid illum aspernatur accusantium, impedit beatae? In, sit.
+        <p class="description">
+            Cats are great! They're cute, have little triangle ears, and make adorable sounds. What's not to love? Start enjoying cats <em>now</em>!
         </p>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p class="description">"Meow, mrrp meowww meow." - our CEO</p>
         <form action="#" method="post" id="sign-up-form">
             <p>Let's do this!</p>
 
             <div class="left-form-col">
-                <label for="first-name">First Name</label>
-                <input type="text" name="first-name" id="first-name" required>
+                <div class="required">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first-name" id="first-name" placeholder="Rick" required>
+                </div>
                 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
+                <div class="required">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="nevergonna@giveyouup.com" required>
+                </div>
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
+                <div class="required">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
             </div>
             <div class="right-form-col">
-                <label for="last-name">Last Name</label>
-                <input type="text" name="last-name" id="last-name" required>
+                <div class="required">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last-name" id="last-name" placeholder="Astley" required>
+                </div>
                 
-                <label for="phone-number">Phone Number</label>
-                <input type="tel" name="phone-number" id="phone-number">
+                <div>
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" name="phone-number" id="phone-number">
+                </div>
 
-                <label for="confirm-password">Confirm Password</label>
-                <input type="confirm-password" id="confirm-password" required>
+                <div class="required">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="confirm-password" id="confirm-password" required>
+                </div>
             </div>
         </form>
         <button type="submit" form="sign-up-form">Create Account</button>

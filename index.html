@@ -19,7 +19,7 @@
         <p class="description">
             Cats are great! They're cute, have little triangle ears, and make adorable sounds. What's not to love? Start enjoying cats <em>now</em>!
         </p>
-        <p class="description">"Meow, mrrp meowww meow." - our CEO</p>
+        <p class="description">"Meow, mrrp mrrp meow." - our CEO</p>
         <form action="#" method="post" id="sign-up-form">
             <p>Let's do this!</p>
 
@@ -36,7 +36,8 @@
 
                 <div class="required">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" class="error wrong-pass" minlength="5" maxlength="20" placeholder="5-20 characters" required>
+                    <span></span>
                 </div>
             </div>
             <div class="right-form-col">
@@ -52,12 +53,13 @@
 
                 <div class="required">
                     <label for="confirm-password">Confirm Password</label>
-                    <input type="confirm-password" id="confirm-password" required>
+                    <input type="password" id="confirm-password" class="error" minlength="5" maxlength="20" placeholder="5-20 characters" required>
+                    <span></span>
                 </div>
             </div>
         </form>
         <button type="submit" form="sign-up-form">Create Account</button>
-        <p>Already have an account? <a href="index.html">Log in</a></p>
+        <p>Already have an account? <a class="log-in-link" href="index.html">Log in</a></p>
     </div>
 </body>
 </html>

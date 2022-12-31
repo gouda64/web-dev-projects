@@ -42,6 +42,14 @@ input:focus, textarea:focus {
     box-shadow: 2px 2px 5px rgb(214, 214, 214);
 }
 
+input::placeholder, textarea::placeholder {
+    color: rgb(175, 175, 175);
+}
+
+input:invalid:not(:placeholder-shown), .error, .wrong-pass {
+    border: 1px solid red;
+}
+
 button {
     font: inherit;
     padding: 15px 30px;
@@ -94,10 +102,6 @@ button:hover {
     max-width: 70rem;
 }
 
-/* .content-section > p:first-child {
-    margin-top: 200px;
-} */
-
 .content-section p.description, .content-section form p {
     font-weight: bold;
     font-size: 2vw;
@@ -136,12 +140,19 @@ button:hover {
 }
 
 .content-section div.required label::after {
-    font-size: 0.75em;
+    font-size: 0.6rem;
     content: "  (required)"
 }
 
 .content-section input {
     font-size: 1.25rem;
+}
+
+.wrong-pass + span::after {
+    color: red;
+    content: "* Passwords do not match";
+    font-size: 0.8rem;
+    position: relative;
 }
 
 .content-section button {

@@ -50,6 +50,15 @@ body {
     font-size: 2rem;
 }
 
+.sidebar .logo img {
+    width: 2.3em;
+    height: 2.3em;
+}
+
+.sidebar img {
+    filter: invert();
+}
+
 .sidebar ul li {
     margin-top: 20px;
     font-size: 1.25rem;
@@ -93,7 +102,8 @@ body {
 
 .header .header-options {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
+    gap: 50px;
     align-items: center;
     margin: 0;
 }
@@ -109,7 +119,13 @@ body {
     justify-items: end;
     align-items: center;
     gap: 15px;
-    padding: 0 50px 15px 50px;
+    padding: 0 50px 25px 50px;
+}
+
+.profile img, .header .header-options li:nth-child(2) img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
 }
 
 .profile .hi-there {
@@ -159,7 +175,7 @@ body {
 
 .content .projects .project-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 25px;
 }
 
@@ -186,7 +202,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-content: end;
-    gap: 10px;
+    gap: 30px;
 }
 
 .project-cards .project-card span {
@@ -207,6 +223,12 @@ body {
 .content .announcements ul .announ-border {
     height: 1px;
     background-color: var(--sidebar-purple, purple);
+}
+
+.announcements ul li {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 5px;
 }
 
 .project-cards .project-card .color-bar, .project-cards .project-card .not-color-bar, .announcements ul, .trending ul {

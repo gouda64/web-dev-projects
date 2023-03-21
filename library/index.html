@@ -6,9 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class="header">
+        <span>Librarby <span class="fyi">(yes this is on purpose)</span></span>
+    </div>
+    <div class="content">
+        <input type="button" value="+ Add Book">
+        <form>
+            <div>
+                <label for="author">Title</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div>
+                <label for="num-pages">Number of Pages</label>
+                <input type="number" min="1" name="pages" id="num-pages">
+            </div>
+            <div>
+                <label for="read">Read Already</label>
+                <input type="checkbox" name="read" id="read">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,22 +1,21 @@
 let library = [];
 
 const addButton = document.querySelector(".content > input[type='button']");
-const form = document.querySelector(".content > form");
+const modal = document.querySelector(".content > .modal");
 let modalOn = false;
 
 addButton.onclick = () => {
-  form.style.display = 'initial';
-  document.querySelector("body").style.filter = 'brightness(80%)';
+  modal.style.display = 'initial';
+  document.querySelector("#page-mask").style.display = "initial";
+  modal.style.filter = "brightness(120%)";
   modalOn = true;
-  console.log(modalOn);
 }
 
 window.onclick = (event) => {
-  if (event.target !== form && event.target !== addButton && modalOn === true) {
-    form.style.display = "none";
-    document.querySelector("body").style.filter = null;
+  if (modalOn === true && !modal.contains(event.target) && event.target !== addButton) {
+    modal.style.display = "none";
+    document.querySelector("#page-mask").style.display = "none";
     modalOn = false;
-    console.log(modalOn);
   }
 }
 

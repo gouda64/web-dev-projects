@@ -56,13 +56,6 @@ const gameBoard = (() => {
     return {move, gameState, clear, render};
 })();
 
-const Player = (x, name) => {
-
-    const isX = () => {return x};
-
-    return {isX, name}
-}
-
 const game = (() => {
     const status = document.querySelector(".status");
     let xMove = true;

@@ -1,0 +1,164 @@
+@font-face {
+    font-family: cats;
+    src: url(./OrientalCatsLight.otf);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input, textarea {
+    font: inherit;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 3px;
+    padding: 8px 10px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid rgb(0, 13, 255);
+    box-shadow: 2px 2px 5px rgb(214, 214, 214);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgb(175, 175, 175);
+}
+
+input:invalid:not(:placeholder-shown), .error, .wrong-pass {
+    border: 1px solid red;
+}
+
+button {
+    font: inherit;
+    padding: 15px 30px;
+    width: 250px;
+}
+
+button:hover {
+    filter: brightness(90%);
+    transition: 0.2s;
+}
+
+.logo-section {
+    background-image: url("background-cat.jpg");
+    background-size: auto 100%;
+    flex: 2 1 auto;
+    min-width: calc(100vh * 1550 / 3072);
+    max-width: calc(100vh * 2048 / 3072);
+    color: white;
+    position: relative;
+}
+
+.logo-section p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logo-section .logo-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-family: cats;
+    font-size: 7rem;
+    margin-top: 300px;
+}
+
+.content-section {
+    flex: 2 1 auto;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-section p, .content-section button, .content-section form > div {
+    margin: 15px 15px 15px 50px;
+}
+
+.content-section p.description {
+    max-width: 70rem;
+}
+
+.content-section p.description, .content-section form p {
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.content-section form {
+    background-color: white;
+    box-shadow: 0 6px 6px rgb(230, 230, 230);
+    margin: 40px 0 20px 0;
+    padding: 15px 25px 25px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-section form p {
+    width: 100%;
+}
+
+.content-section form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-section label, .content-section input {
+    display: block;
+}
+
+.content-section label {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 5px;
+}
+
+.content-section div.required label::after {
+    font-size: 0.6rem;
+    content: "  (required)"
+}
+
+.content-section input {
+    font-size: 1.25rem;
+}
+
+.wrong-pass + span::after {
+    color: red;
+    content: "* Passwords do not match";
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.content-section button {
+    color: white;
+    background-color: rgb(97, 192, 192);
+    font-weight: bold;
+    border-style: none;
+    border-radius: 10px;
+}

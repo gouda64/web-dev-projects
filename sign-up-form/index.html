@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Sign-up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="logo-section">
+        <div class="logo-container">
+            🐈CATS
+        </div>
+        <p>Photo by <a href="https://unsplash.com/@bogdanf?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogdan Farca</a> on <a href="https://unsplash.com/images/animals/cat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+    </div>
+    <div class="content-section">
+        <p class="description">
+            Cats are great! They're cute, have little triangle ears, and make adorable sounds. What's not to love? Start enjoying cats <em>now</em>!
+        </p>
+        <p class="description">"Meow, mrrp mrrp meow." - our CEO</p>
+        <form action="#" method="post" id="sign-up-form">
+            <p>Let's do this!</p>
+
+            <div class="left-form-col">
+                <div class="required">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first-name" id="first-name" placeholder="Rick" required>
+                </div>
+                
+                <div class="required">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="nevergonna@giveyouup.com" required>
+                </div>
+
+                <div class="required">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="error wrong-pass" minlength="5" maxlength="20" placeholder="5-20 characters" required>
+                    <span></span>
+                </div>
+            </div>
+            <div class="right-form-col">
+                <div class="required">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last-name" id="last-name" placeholder="Astley" required>
+                </div>
+                
+                <div>
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" name="phone-number" id="phone-number">
+                </div>
+
+                <div class="required">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" class="error" minlength="5" maxlength="20" placeholder="5-20 characters" required>
+                    <span></span>
+                </div>
+            </div>
+        </form>
+        <button type="submit" form="sign-up-form">Create Account</button>
+        <p>Already have an account? <a class="log-in-link" href="index.html">Log in</a></p>
+    </div>
+</body>
+</html>

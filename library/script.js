@@ -8,6 +8,10 @@ if (window.localStorage.getItem("library") !== null && window.localStorage.getIt
   });
 }
 
+window.onbeforeunload = () => {
+  window.localStorage.setItem("library", JSON.stringify(library));
+}
+
 const addButton = document.querySelector(".content > input[type='button']");
 
 const modal = document.querySelector(".modal");
@@ -87,7 +91,6 @@ function addBookToLibrary(author, title, pages, read) {
   library.push(newBook);
 
   addBookNode(author, title, pages, read, library.length-1);
-  window.localStorage.setItem("library", JSON.stringify(library));
 }
 
 function addBookNode(author, title, pages, read, index) {

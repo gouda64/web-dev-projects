@@ -1,0 +1,140 @@
+body {
+    height: 100vh;
+    display: flex;
+    margin: 20px 50px;
+
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lucida Console', 'Courier New', monospace; 
+    background-color: #f3e6d9;
+    color: #545863;
+}
+
+.header {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.sidebar {
+    min-width: 80px;
+    max-width: 120px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.slider {
+    margin-top: 7px;
+    -webkit-appearance: none;
+    background-color: #bcbab5;
+    border-radius: 8px;
+    height: 15px;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 23px;
+    height: 23px;
+    border-radius: 23px;
+    background-color: #545863;
+}
+
+.switch {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #545863;
+    height: 25px;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+}
+.switch-thumb {
+    background-color: #545863;
+    height: 16px;
+    width: 16px;
+    border-radius: 16px;
+    margin: 0 8px;
+    transition: inherit;
+}
+
+.grid-toggle .switch {
+    background-color: #545863;
+}
+.grid-toggle .switch-thumb {
+    background-color: #f3e6d9;
+    transform: translateX(28px);
+}
+
+.color {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #545863;
+    height: 30px;
+    width: 50px;
+    background-color: #84827d;
+}
+.color [type="color"] {
+    opacity: 0;
+    height: 30px;
+    width: 50px;
+}
+
+.sidebar-option.mode {
+    border-style: solid;
+    border-color: #545863;
+    padding: 5px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 8px;
+    transition: .2s;
+}
+.sidebar-option.mode[data-mode="0"] {
+    background-color: #545863;
+    color: #f3e6d9;
+}
+.sidebar-option.mode:hover {
+    background-color: #545863;
+    color: #f3e6d9;
+}
+
+.display {
+    border-style: solid;
+    border-width: 2px;
+    display: grid;
+    flex: 1 1 auto;
+
+    margin-bottom: 30px;
+    
+    width: 30vw;
+    height: 30vw;
+
+    min-height: 450px;
+    min-width: 450px;
+
+    max-height: 900px;
+    max-width: 900px;
+}
+.display div {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+}

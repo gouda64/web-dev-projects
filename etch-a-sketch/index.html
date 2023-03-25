@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <title>Etch-a-Sketch</title>
+    </head>
+    <body>
+        <div class="header">Etch-a-Sketch</div>
+        <div class="content">
+            <div class="sidebar">
+                <div class="sidebar-option">16 x 16
+                    <input type="range" min="1" max="69" value="16" class="slider">
+                </div>
+                <div class="sidebar-option draw-toggle">Clicking
+                    <div class="switch">
+                        <div class="switch-thumb"></div>
+                    </div>
+                </div>
+                <div class="sidebar-option">Color
+                    <div class="color">
+                        <input type="color" value="#84827d">
+                    </div>
+                </div>
+                <div class="sidebar-option mode" data-mode="0">Normal</div>
+                <div class="sidebar-option mode" data-mode="1">Rainbow</div>
+                <div class="sidebar-option mode" data-mode="2">Erase</div>
+                <div class="sidebar-option grid-toggle">Gridlines
+                    <div class="switch">
+                        <div class="switch-thumb"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="display"></div>
+        </div>
+    </body>
+</html>

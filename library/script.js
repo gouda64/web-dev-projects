@@ -78,12 +78,13 @@ document.querySelector(".modal form").onsubmit = (event) => {
   closeModal();
 }
 
-
-function Book(author, title, pages, read) {
-  this.author = author;
-  this.title = title;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(author, title, pages, read) {
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 function addBookToLibrary(author, title, pages, read) {

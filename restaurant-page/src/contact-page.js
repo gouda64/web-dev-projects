@@ -3,6 +3,8 @@ const load = () => {
     if (content.hasChildNodes()) {
         content.textContent = "";
     }
+    content.classList.remove(...content.classList);
+
     content.classList.add("contact");
 
     content.appendChild(contactCard("phone", "we're literally cats"));
@@ -16,10 +18,12 @@ const contactCard = (type, text) => {
 
     const title = document.createElement("div");
     title.textContent = type;
+    title.classList.add("type");
     card.appendChild(title);
 
     const answer = document.createElement("div");
     answer.textContent = text;
+    answer.classList.add("text");
     card.appendChild(answer);
 
     return card;

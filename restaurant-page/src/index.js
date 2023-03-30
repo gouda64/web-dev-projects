@@ -4,7 +4,7 @@ import {load as loadContact} from './contact-page.js';
 
 const body = document.querySelector("body");
 
-const loadHeader = () => {
+const getHeader = () => {
     const header = document.createElement("div");
     header.classList.add("header");
     header.textContent = "possibly perfect café"
@@ -14,45 +14,73 @@ const loadHeader = () => {
     btw.textContent = "no cat puns - we take our job seriously";
     header.appendChild(btw);
 
-    body.insertBefore(header, document.querySelector("#content"));
+    return header;
 };
 
-const loadTabs = () => {
-    const tabs = document.createElement("div");
-    //could do ul but then you gotta deal with all that styling stuff
-    //accessibility concern?
-    /* anyways I know comments are supposed to be informative
-    and not my personal diary but honestly idrc nobody else is gonna
-    see this anyways, who am I even talking to?
-    tldr: why write less word when more word do job?
-    */
+const getTabs = () => {
+    const content = document.querySelector("#content");
 
-    const mainChild = document.createElement("div");
-    mainChild.textContent = "main";
-    const menuChild = document.createElement("div");
-    menuChild.textContent = "menu";
-    const contactChild = document.createElement("div");
-    contactChild.textContent = "contact";
-    
+    const tabs = document.createElement("div");
+    tabs.classList.add("tabs");
+
+    const buttonMaker = (text) => {
+        const butt = document.createElement("button");
+        butt.type = 'button';
+        butt.textContent = text;
+        return butt;
+    }
+
+    const mainChild = buttonMaker("home");
+    const menuChild = buttonMaker("menu");
+    const contactChild = buttonMaker("contact");
+
+    mainChild.onclick = () => {
+        if (!content.classList.contains("main")) {
+            loadMain();
+        }  
+    };
+    menuChild.onclick = () => {
+        if (!content.classList.contains("menu")) {
+            loadMenu();
+        }
+    }
+    contactChild.onclick = () => {
+        if (!content.classList.contains("contact")) {
+            loadContact();
+        }
+    }
+
     tabs.appendChild(mainChild);
     tabs.appendChild(menuChild);
     tabs.appendChild(contactChild);
 
-    body.insertBefore(tabs, document.querySelector("#content"));
+    return tabs;
 };
+
+const loadTop = () => {
+    const top = document.createElement("div");
+    top.classList.add("top");
+    top.appendChild(getHeader());
+    top.appendChild(getTabs());
+
+    body.insertBefore(top, document.querySelector("#content"));
+}
 
 const loadFooter = () => {
     const footer = document.createElement("div");
     footer.classList.add("footer");
-    footer.textContent = "menu info and images aren't mine. i could add a copyright, but why are you trying to steal from cats?";
+    footer.textContent = "menu info and images aren't mine. in my horrid-looking websites because I'm too lazy to download assets era";
     body.appendChild(footer);
 };
 
 const startSite = () => {
-    loadHeader();
-    loadTabs();
+    loadTop();
     loadMain();
     loadFooter();
+
+    const bkgd = document.createElement("div");
+    bkgd.classList.add("bkgd-disp");
+    body.appendChild(bkgd);
 }
 
 startSite();

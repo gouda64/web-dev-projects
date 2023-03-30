@@ -5,6 +5,8 @@ const load = () => {
     if (content.hasChildNodes()) {
         content.textContent = "";
     }
+    content.classList.remove(...content.classList);
+
     content.classList.add("main");
 
     const headline = document.createElement("div");
@@ -17,7 +19,7 @@ const load = () => {
 
     const caption = document.createElement("div");
     caption.classList.add("caption");
-    caption.textContent = '"i love [our food] and that is the beginning and end of everything." - the great catsby';
+    caption.textContent = '"i love [the food] and that is the beginning and end of everything." - the great catsby';
 
     content.appendChild(headline);
     content.appendChild(pic);
